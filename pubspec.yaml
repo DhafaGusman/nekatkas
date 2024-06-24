@@ -1,0 +1,84 @@
+name: nekatkas
+description: "Sebuah aplikasi yang dapat membantu dalam mencatat keuangan."
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.4.3 <4.0.0"
+
+#---------------------- Packages ----------------------#
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+  hexcolor: ^3.0.1
+  flutter_native_splash: ^2.4.0
+  flutter_launcher_icons: ^0.13.1
+  feather_icons: ^1.2.0
+  dots_indicator: ^3.0.0
+#-------------------- Packages Ends -------------------#
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  #---------------------- Local Assets ----------------------#
+  assets:
+    - assets/
+    - assets/img/
+    - assets/img/logo/
+    - assets/img/vector/
+  #-------------------- Local Assets Ends -------------------#
+
+  #---------------------- Local Fonts ----------------------#
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/font/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/font/Poppins-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/font/Poppins-Regular.ttf
+        - asset: assets/font/Poppins-Italic.ttf
+          style: italic
+        - asset: assets/font/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/font/Poppins-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/font/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/font/Poppins-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/font/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/font/Poppins-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/font/Poppins-ExtraBold.ttf
+          weight: 800
+        - asset: assets/font/Poppins-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+  #------------------- Local Fonts Ends --------------------#
+
+#------------------- Flutter Launcher Icons -------------------#
+flutter_launcher_icons:
+  android: "ic_launcher"
+  ios: "AppIcon"
+  image_path: "assets/img/logo/logo-nekatkas-icon.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/img/logo/logo-nekatkas-icon.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true
+#------------------- Flutter Launcher Icons Ends -------------------#

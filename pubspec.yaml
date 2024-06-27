@@ -15,10 +15,11 @@ dependencies:
 
   cupertino_icons: ^1.0.6
   hexcolor: ^3.0.1
-  flutter_native_splash: ^2.4.0
   flutter_launcher_icons: ^0.13.1
   feather_icons: ^1.2.0
   dots_indicator: ^3.0.0
+  email_validator: ^3.0.0
+  intl_phone_number_input: ^0.7.4
 #-------------------- Packages Ends -------------------#
 
 dev_dependencies:

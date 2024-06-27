@@ -330,7 +330,7 @@ class _LandingPageState extends State<LandingPage> {
                   minimumSize: const Size(double.infinity, 55),
                   backgroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                 ),
                 child: Text(

@@ -58,11 +58,14 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
               width: 150,
             ),
           ),
-          Align(
+          const Align(
             alignment: Alignment.bottomCenter,
-            child: Image.asset(
-              'assets/img/vector/uang.png',
+            child: FadeInImage(
+              placeholder: AssetImage('assets/img/vector/uang.png'),
+              image: AssetImage('assets/img/vector/uang.png'),
+              fadeInDuration: Duration(seconds: 1),
               width: 370,
+              fit: BoxFit.cover,
             ),
           ),
         ],

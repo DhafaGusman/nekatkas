@@ -20,6 +20,10 @@ dependencies:
   dots_indicator: ^3.0.0
   email_validator: ^3.0.0
   intl_phone_number_input: ^0.7.4
+  image_picker: ^1.1.2
+  image_cropper: ^7.1.0
+  permission_handler: ^11.3.1
+  lottie: ^3.1.2
 #-------------------- Packages Ends -------------------#
 
 dev_dependencies:
@@ -37,6 +41,7 @@ flutter:
     - assets/img/
     - assets/img/logo/
     - assets/img/vector/
+    - assets/img/icon/
   #-------------------- Local Assets Ends -------------------#
 
   #---------------------- Local Fonts ----------------------#

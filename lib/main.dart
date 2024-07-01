@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nekatkas/utils/colors/global_colors.dart';
 import 'package:nekatkas/view/auth/landing_page.dart';
-// import 'package:nekatkas/view/auth/landing_page.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -58,14 +58,11 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
               width: 150,
             ),
           ),
-          const Align(
+          Align(
             alignment: Alignment.bottomCenter,
-            child: FadeInImage(
-              placeholder: AssetImage('assets/img/vector/uang.png'),
-              image: AssetImage('assets/img/vector/uang.png'),
-              fadeInDuration: Duration(seconds: 1),
+            child: Image.asset(
+              'assets/img/vector/uang.png',
               width: 370,
-              fit: BoxFit.cover,
             ),
           ),
         ],

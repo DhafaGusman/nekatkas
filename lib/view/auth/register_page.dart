@@ -53,7 +53,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final GlobalKey<FormState> _step5FormKey = GlobalKey();
   final GlobalKey<FormState> _step6FormKey = GlobalKey();
 
-  // -- Controller -- //
+  // -- Text Editing Controller -- //
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();

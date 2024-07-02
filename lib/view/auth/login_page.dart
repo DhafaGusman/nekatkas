@@ -2,9 +2,11 @@ import 'package:email_validator/email_validator.dart';
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:lottie/lottie.dart';
 
 import 'package:nekatkas/utils/colors/global_colors.dart';
 import 'package:nekatkas/view/auth/register_page.dart';
+import 'package:nekatkas/view/home/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -13,7 +15,7 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixin {
   // -- Local Variable -- //
   bool _obscureText = true;
   bool _isChecked = false;
@@ -21,9 +23,53 @@ class _LoginPageState extends State<LoginPage> {
   // -- Form Key -- //
   final GlobalKey<FormState> loginKey = GlobalKey();
 
-  // -- Controller -- //
+  // -- Text Editing Controller -- //
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  late final AnimationController loadingController;
+
+  @override
+  void initState() {
+    super.initState();
+    loadingController = AnimationController(vsync: this);
+  }
+
+  @override
+  void dispose() {
+    loadingController.dispose();
+    super.dispose();
+  }
+
+  // -- Login Method -- //
+  Future<void> loginUser() async {
+    // -- Login Validate -- //
+    if (loginKey.currentState!.validate()) {
+      // -- Loading -- //
+      showDialog(
+        context: context,
+        builder: (context) {
+          return Center(
+            child: Lottie.network(
+              'https://lottie.host/c10a26cd-b8f5-4812-bd56-0e426931b6c1/iut8pDojlT.json',
+              controller: loadingController,
+              onLoaded: (composition) {
+                loadingController
+                  ..duration = composition.duration
+                  ..repeat();
+              },
+              width: 200,
+              fit: BoxFit.contain,
+            ),
+          );
+        },
+      );
+      await Future.delayed(const Duration(seconds: 5));
+      Navigator.of(context).pop();
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const HomePage()),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -215,7 +261,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 50),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    loginUser();
+                  },
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(double.infinity, 55),
                     backgroundColor: HexColor('29B6F6'),

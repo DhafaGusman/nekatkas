@@ -10,6 +10,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:nekatkas/feature/controller/handle_registration.dart';
+import 'package:nekatkas/view/auth/login_page.dart';
 import 'package:nekatkas/widgets/modal/modal_category.dart';
 import 'package:nekatkas/widgets/modal/modal_chooser.dart';
 import 'package:nekatkas/widgets/modal/modal_pick_image.dart';
@@ -104,7 +105,7 @@ class _RegisterPageState extends State<RegisterPage> {
       'foto': 'assets/img/vector/senyum.png',
       'judul': 'Buat akun',
       'deskripsi': 'Masukan nama dan email kamu',
-      'tombol': 'Lanjut',
+      'tombol': 'Daftar',
     },
     // List teks dan foto halaman 2 (password)
     {
@@ -1161,30 +1162,31 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ],
                 ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 15),
               if (_pageIndex == 0)
-                RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: 'Sudah punya akun? ',
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 13,
-                          color: GlobalColors.fourthColor,
-                        ),
-                      ),
-                      TextSpan(
-                        text: 'Masuk',
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 13,
-                          color: GlobalColors.mainColor,
-                        ),
-                        recognizer: TapGestureRecognizer()..onTap = () {},
-                      ),
-                    ],
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => const LoginPage()),
+                    );
+                  },
+                  style: OutlinedButton.styleFrom(
+                    minimumSize: const Size(double.infinity, 55),
+                    side: BorderSide(
+                      color: GlobalColors.garisColor,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                  child: Text(
+                    'Masuk',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: GlobalColors.mainColor,
+                    ),
                   ),
                 ),
             ],

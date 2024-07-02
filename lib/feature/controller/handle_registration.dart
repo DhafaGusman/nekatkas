@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:nekatkas/utils/colors/global_colors.dart';
+import 'package:nekatkas/view/home/home_page.dart';
 
 // -- Register Loading -- //
 
@@ -130,7 +131,11 @@ class _RegisterSuccessState extends State<RegisterSuccess> with SingleTickerProv
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(30),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (_) => const HomePage()),
+            );
+          },
           style: ElevatedButton.styleFrom(
             minimumSize: const Size(double.infinity, 55),
             backgroundColor: Colors.white,

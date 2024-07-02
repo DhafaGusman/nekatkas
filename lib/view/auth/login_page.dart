@@ -119,7 +119,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  'Login untuk masuk ke nekatkas',
+                  'Login untuk masuk ke Nekatkas',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Poppins',

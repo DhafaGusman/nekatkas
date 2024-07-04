@@ -9,7 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import 'package:nekatkas/feature/controller/handle_registration.dart';
+import 'package:nekatkas/backend/controller/handle_registration.dart';
 import 'package:nekatkas/view/auth/login_page.dart';
 import 'package:nekatkas/widgets/modal/modal_category.dart';
 import 'package:nekatkas/widgets/modal/modal_chooser.dart';
@@ -466,6 +466,8 @@ class _RegisterPageState extends State<RegisterPage> {
         validator: (value) {
           if (value == null || value.isEmpty) {
             return 'Nomor telepon belum diisi';
+          } else if (value.length < 6) {
+            return 'Nomor tidak valid';
           }
           return null;
         },

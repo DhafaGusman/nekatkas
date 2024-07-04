@@ -35,8 +35,8 @@ class _RegisterLoadingState extends State<RegisterLoading> with SingleTickerProv
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Lottie.network(
-              'https://lottie.host/c10a26cd-b8f5-4812-bd56-0e426931b6c1/iut8pDojlT.json',
+            Lottie.asset(
+              'assets/animation/animation-loading.json',
               controller: loadingController,
               onLoaded: (composition) {
                 loadingController
@@ -95,8 +95,8 @@ class _RegisterSuccessState extends State<RegisterSuccess> with SingleTickerProv
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Lottie.network(
-              'https://lottie.host/9063fbf2-784f-445f-a65c-83dbd34da6da/VCWLafdXL4.json',
+            Lottie.asset(
+              'assets/animation/animation-success.json',
               controller: _controller,
               onLoaded: (composition) {
                 _controller
@@ -160,8 +160,27 @@ class _RegisterSuccessState extends State<RegisterSuccess> with SingleTickerProv
 
 // -- Register Unsucessful -- //
 
-class RegisterUnsuccessful extends StatelessWidget {
+class RegisterUnsuccessful extends StatefulWidget {
   const RegisterUnsuccessful({super.key});
+
+  @override
+  State<RegisterUnsuccessful> createState() => _RegisterUnsuccessfulState();
+}
+
+class _RegisterUnsuccessfulState extends State<RegisterUnsuccessful> with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -171,8 +190,14 @@ class RegisterUnsuccessful extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Lottie.network(
-              'https://lottie.host/99e5cfb4-99cf-4751-bdf7-3040505bbf0c/Uu7juCJees.json',
+            Lottie.asset(
+              'assets/animation/animation-x.json',
+              controller: _controller,
+              onLoaded: (composition) {
+                _controller
+                  ..duration = composition.duration
+                  ..forward();
+              },
               width: 150,
               fit: BoxFit.contain,
             ),

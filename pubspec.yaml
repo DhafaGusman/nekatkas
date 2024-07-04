@@ -42,6 +42,7 @@ flutter:
     - assets/img/logo/
     - assets/img/vector/
     - assets/img/icon/
+    - assets/animation/
   #-------------------- Local Assets Ends -------------------#
 
   #---------------------- Local Fonts ----------------------#

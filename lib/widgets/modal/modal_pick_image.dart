@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:nekatkas/widgets/snackbar/snackbar.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -100,7 +101,7 @@ class ModalPickImage extends StatelessWidget {
                       Icon(
                         FeatherIcons.camera,
                         size: 30,
-                        color: GlobalColors.textColor,
+                        color: HexColor('505050'),
                       ),
                       const SizedBox(width: 15),
                       Text(
@@ -126,7 +127,7 @@ class ModalPickImage extends StatelessWidget {
                       Icon(
                         FeatherIcons.image,
                         size: 30,
-                        color: GlobalColors.textColor,
+                        color: HexColor('505050'),
                       ),
                       const SizedBox(width: 15),
                       Text(

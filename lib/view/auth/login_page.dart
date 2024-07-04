@@ -49,8 +49,8 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
         context: context,
         builder: (context) {
           return Center(
-            child: Lottie.network(
-              'https://lottie.host/c10a26cd-b8f5-4812-bd56-0e426931b6c1/iut8pDojlT.json',
+            child: Lottie.asset(
+              'assets/animation/animation-loading.json',
               controller: loadingController,
               onLoaded: (composition) {
                 loadingController
